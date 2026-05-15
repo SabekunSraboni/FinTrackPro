@@ -40,6 +40,7 @@
             background: white; padding: 25px; border-radius: 15px; text-align: center;
             text-decoration: none; color: #333; border: 1px solid #e0e0e0;
             transition: 0.3s; display: block;
+            cursor: default; /* যাতে ক্লিক করা যাবে না সেটা বোঝা যায় */
         }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: #d81b60; }
         .icon { font-size: 35px; margin-bottom: 12px; display: block; }
@@ -52,24 +53,23 @@
 
 <div class="navbar">
     <div style="font-size: 20px; font-weight: bold;">FinTrackpro</div>
-    <a href="{% url 'home' %}" class="logout-btn">Logout</a>
+    <a href="{% url 'login' %}" class="logout-btn">Logout</a>
 </div>
 
 <div class="container">
     <div class="balance-card">
         <div class="balance-info">
             <p>Current Balance</p>
-            <h1>৳ 25,450.00</h1>
-        </div>
+            <h1>৳ 0.00</h1> </div>
         <div class="balance-stats">
             <div class="stat-item">
                 <span style="color: #81c784;">▼ Income</span>
-                <p>৳ 45,000</p>
+                <p>৳ 0</p>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
                 <span style="color: #ff8a80;">▲ Expense</span>
-                <p>৳ 19,550</p>
+                <p>৳ 0</p>
             </div>
         </div>
     </div>
@@ -80,19 +80,13 @@
         <a href="#" class="card">
             <span class="icon">💸</span>
             <h3>Transactions</h3>
-            <p>Track income & expenses</p>
+            <p>Track income & expenses (Disabled)</p>
         </a>
 
         <a href="#" class="card">
             <span class="icon">🎯</span>
             <h3>Savings Goal</h3>
-            <p>Set financial targets</p>
-        </a>
-
-        <a href="#" class="card">
-            <span class="icon">👤</span>
-            <h3>Profile & Media</h3>
-            <p>Manage your account</p>
+            <p>Set financial targets (Disabled)</p>
         </a>
 
         <a href="#" class="card">

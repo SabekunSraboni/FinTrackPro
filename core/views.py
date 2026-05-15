@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+def welcome_view(request):
+    return render(request, 'home.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -27,3 +29,9 @@ def register_view(request):
 def dashboard_view(request):
     if not request.user.is_authenticated: return redirect('/')
     return render(request, 'dashboard.html')
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
